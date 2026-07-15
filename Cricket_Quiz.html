@@ -23,6 +23,12 @@
 
             alert("Your Score is " + score + " out of 2");
         }
+        // Question 3
+if(document.querySelector('input[name="q3"]:checked') &&
+   document.querySelector('input[name="q3"]:checked').value=="Jasprit Bumrah")
+{
+    score++;
+}
     </script>
 
 </head>
@@ -62,6 +68,18 @@ Finn Allen<br>
 
 <input type="radio" name="q2" value="Quinton de Kock">
 Quinton de Kock<br><br>
+
+    <hr>
+
+<b>3) Who was the Player of the Tournament in the 2024 T20 World Cup?</b><br><br>
+
+<input type="radio" name="q3" value="Suryakumar Yadav"> Suryakumar Yadav<br>
+
+<input type="radio" name="q3" value="Jasprit Bumrah"> Jasprit Bumrah<br>
+
+<input type="radio" name="q3" value="David Miller"> David Miller<br>
+
+<input type="radio" name="q3" value="Shubman Gill"> Shubman Gill<br><br>
 
 <input type="button" value="Submit Quiz" onclick="checkAnswers()">
 

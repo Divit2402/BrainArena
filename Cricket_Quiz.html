@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Cricket Quiz</title>
+<title>Cricket Quiz</title>
 
-    <script>
-        function checkAnswers() {
-            let score = 0;
-
-            // Question 1
-            if(document.querySelector('input[name="q1"]:checked') &&
-               document.querySelector('input[name="q1"]:checked').value == "David Miller")
-            {
-                score+++;
-            }
-
-            // Question 2
-            if(document.querySelector('input[name="q2"]:checked') &&
-               document.querySelector('input[name="q2"]:checked').value == "Finn Allen")
-            {
-                score+++;
-            }
-
-            alert("Your Score is " + score + " out of 3");
-        }
-        // Question 3
-if(document.querySelector('input[name="q3"]:checked') &&
-   document.querySelector('input[name="q3"]:checked').value=="Jasprit Bumrah")
+<script>
+function checkAnswers()
 {
-    score+++;
+    let score = 0;
+
+    // Question 1
+    if(document.querySelector('input[name="q1"]:checked') &&
+       document.querySelector('input[name="q1"]:checked').value=="David Miller")
+    {
+        score++;
+    }
+
+    // Question 2
+    if(document.querySelector('input[name="q2"]:checked') &&
+       document.querySelector('input[name="q2"]:checked').value=="Finn Allen")
+    {
+        score++;
+    }
+
+    // Question 3
+    if(document.querySelector('input[name="q3"]:checked') &&
+       document.querySelector('input[name="q3"]:checked').value=="Jasprit Bumrah")
+    {
+        score++;
+    }
+
+    alert("Your Score is " + score + " out of 3");
 }
-    </script>
+</script>
 
 </head>
 
 <body bgcolor="yellow" text="red">
 
-<h2>Cricket Quiz</h2>
+<h2 align="center">Cricket Quiz</h2>
 
 <form>
 
-<b>1) Suryakumar Yadav took a stunning catch of which player in the 2024 T20 World Cup final?</b><br><br>
+<b>1) Suryakumar Yadav took a stunning catch of which player in the 2024 T20 World Cup Final?</b><br><br>
 
-<input type="radio" name="q1" value="Henrich Klaasen">
-Henrich Klaasen<br>
+<input type="radio" name="q1" value="Henrich Klaasen"> Henrich Klaasen<br>
 
-<input type="radio" name="q1" value="David Miller">
-David Miller<br>
+<input type="radio" name="q1" value="David Miller"> David Miller<br>
 
-<input type="radio" name="q1" value="Travis Head">
-Travis Head<br>
+<input type="radio" name="q1" value="Travis Head"> Travis Head<br>
 
-<input type="radio" name="q1" value="Quinton de Kock">
-Quinton de Kock<br><br>
+<input type="radio" name="q1" value="Quinton de Kock"> Quinton de Kock<br><br>
 
 <hr>
 
 <b>2) Which player scored the fastest hundred in the T20 World Cup 2026?</b><br><br>
 
-<input type="radio" name="q2" value="Ryan Rickelton">
-Ryan Rickelton<br>
+<input type="radio" name="q2" value="Ryan Rickelton"> Ryan Rickelton<br>
 
-<input type="radio" name="q2" value="Aiden Markram">
-Aiden Markram<br>
+<input type="radio" name="q2" value="Aiden Markram"> Aiden Markram<br>
 
-<input type="radio" name="q2" value="Finn Allen">
-Finn Allen<br>
+<input type="radio" name="q2" value="Finn Allen"> Finn Allen<br>
 
-<input type="radio" name="q2" value="Quinton de Kock">
-Quinton de Kock<br><br>
+<input type="radio" name="q2" value="Quinton de Kock"> Quinton de Kock<br><br>
 
-    <hr>
+<hr>
 
 <b>3) Who was the Player of the Tournament in the 2024 T20 World Cup?</b><br><br>
 
@@ -86,4 +81,5 @@ Quinton de Kock<br><br>
 </form>
 
 </body>
+
 </html>

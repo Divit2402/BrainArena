@@ -1,18 +1,71 @@
-<HTML>
-<HEAD>
-<TITLE> Cricket quiz </title>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Quiz</title>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+
+            // Question 1
+            if(document.querySelector('input[name="q1"]:checked') &&
+               document.querySelector('input[name="q1"]:checked').value == "David Miller")
+            {
+                score++;
+            }
+
+            // Question 2
+            if(document.querySelector('input[name="q2"]:checked') &&
+               document.querySelector('input[name="q2"]:checked').value == "Finn Allen")
+            {
+                score++;
+            }
+
+            alert("Your Score is " + score + " out of 2");
+        }
+    </script>
+
 </head>
-<body bgcolor= yellow text= red >
-1)Suryakumar Yadav took a stunning catch of which player in the 2024 T20 World Cup final? <br>
- <a href="         https://divit2402.github.io/BrainArena/Wrong.html                      " >Henrich Klaasen </a> <br>
- <a href="       https://divit2402.github.io/BrainArena/Correct.html                           " >David Miller </a> <br>
-  <a href="    https://divit2402.github.io/BrainArena/Wrong.html                          ">Travis Head </a> <br>
-<a href="      https://divit2402.github.io/BrainArena/Wrong.html                     " > Quinton de Cock     </a>   <br>  
-2) Which player scored the fastest hundred in t20 wc 2026? <br>
- <a href =" https://divit2402.github.io/BrainArena/Wrong.html  "> Ryan Rickelton </a> <br>
-  <a href="       https://divit2402.github.io/BrainArena/Wrong.html "> Aiden Markrum </a> <br>
-  <a href="       https://divit2402.github.io/BrainArena/Correct.html "> Finn Allen </a> <br>
- <a href =" https://divit2402.github.io/BrainArena/Wrong.html  "> Quinton De Cock  </a> <br>
- 
-</body> 
+
+<body bgcolor="yellow" text="red">
+
+<h2>Cricket Quiz</h2>
+
+<form>
+
+<b>1) Suryakumar Yadav took a stunning catch of which player in the 2024 T20 World Cup final?</b><br><br>
+
+<input type="radio" name="q1" value="Henrich Klaasen">
+Henrich Klaasen<br>
+
+<input type="radio" name="q1" value="David Miller">
+David Miller<br>
+
+<input type="radio" name="q1" value="Travis Head">
+Travis Head<br>
+
+<input type="radio" name="q1" value="Quinton de Kock">
+Quinton de Kock<br><br>
+
+<hr>
+
+<b>2) Which player scored the fastest hundred in the T20 World Cup 2026?</b><br><br>
+
+<input type="radio" name="q2" value="Ryan Rickelton">
+Ryan Rickelton<br>
+
+<input type="radio" name="q2" value="Aiden Markram">
+Aiden Markram<br>
+
+<input type="radio" name="q2" value="Finn Allen">
+Finn Allen<br>
+
+<input type="radio" name="q2" value="Quinton de Kock">
+Quinton de Kock<br><br>
+
+<input type="button" value="Submit Quiz" onclick="checkAnswers()">
+
+</form>
+
+</body>
 </html>

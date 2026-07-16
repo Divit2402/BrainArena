@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cricket News Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef6ee;
+color:#222;
+}
+
+/* Loading Screen */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:40px;
+font-weight:bold;
+z-index:1000;
+}
+
+/* Navigation */
+
+nav{
+position:sticky;
+top:0;
+background:#006400;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+z-index:999;
+box-shadow:0 5px 12px rgba(0,0,0,.3);
+}
+
+nav h1{
+font-size:30px;
+}
+
+nav button{
+padding:10px 20px;
+border:none;
+background:white;
+color:#006400;
+font-size:17px;
+border-radius:25px;
+cursor:pointer;
+transition:.3s;
+}
+
+nav button:hover{
+background:gold;
+transform:scale(1.05);
+}
+
+/* Hero */
+
+.hero{
+
+height:380px;
+
+background:url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1500&q=80");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+text-align:center;
+
+}
+
+.hero h2{
+
+font-size:50px;
+background:rgba(0,0,0,.5);
+padding:20px;
+border-radius:15px;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 5px yellow;
+}
+
+to{
+text-shadow:0 0 30px gold;
+}
+
+}
+
+/* Marquee */
+
+marquee{
+
+background:red;
+color:white;
+padding:12px;
+font-size:20px;
+font-weight:bold;
+
+}
+
+/* Clock */
+
+#clock{
+
+text-align:center;
+font-size:30px;
+margin:25px;
+font-weight:bold;
+color:#006400;
+
+}
+
+/* Cards */
+
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
+}
+
+.news{
+
+display:flex;
+gap:25px;
+
+margin:40px 0;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+transition:.5s;
+
+}
+
+.news:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.4);
+
+}
+
+.news img{
+
+width:340px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.news img:hover{
+
+transform:scale(1.08);
+
+}
+
+.text{
+
+padding:25px;
+
+}
+
+.text h2{
+
+color:#006400;
+
+margin-bottom:15px;
+
+}
+
+.text p{
+
+font-size:18px;
+line-height:1.7;
+
+}
+
+/* Quiz */
+
+.quiz{
+
+margin:60px auto;
+
+padding:35px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+}
+
+.quiz h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#006400;
+
+}
+
+.question{
+
+margin:25px 0;
+
+font-size:20px;
+
+}
+
+label{
+
+display:block;
+
+margin:8px 0;
+
+cursor:pointer;
+
+}
+
+button.submit{
+
+display:block;
+
+margin:auto;
+
+padding:15px 40px;
+
+font-size:20px;
+
+border:none;
+
+background:#006400;
+
+color:white;
+
+border-radius:30px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button.submit:hover{
+
+background:#009900;
+
+transform:scale(1.05);
+
+}
+
+/* Progress */
+
+progress{
+
+width:100%;
+height:25px;
+
+margin-top:25px;
+
+}
+
+/* Result */
+
+#result{
+
+font-size:30px;
+
+text-align:center;
+
+margin-top:25px;
+
+font-weight:bold;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:50px;
+
+background:#006400;
+
+color:white;
+
+text-align:center;
+
+padding:25px;
+
+}
+
+/* Dark Mode */
+
+.dark{
+
+background:#121212;
+
+color:white;
+
+}
+
+.dark .news,
+.dark .quiz{
+
+background:#2d2d2d;
+
+color:white;
+
+}
+
+.dark nav{
+
+background:black;
+
+}
+
+.dark footer{
+
+background:black;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.news{
+
+flex-direction:column;
+
+}
+
+.news img{
+
+width:100%;
+
+height:240px;
+
+}
+
+.hero h2{
+
+font-size:32px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+🏏 Loading...
+</div>
+
+<nav>
+
+<h1>🏏 Cricket News Hub</h1>
+
+<button onclick="darkMode()">
+🌙 Dark Mode
+</button>
+
+</nav>
+
+<div class="hero">
+
+<h2>
+WELCOME TO THE WORLD OF CRICKET
+</h2>
+
+</div>
+
+<marquee>
+
+🔥 India defeats England • India Women create history at Lord's • ICC announces 2027 World Cup format 🔥
+
+</marquee>
+
+<h2 id="clock"></h2>
+
+<div class="container">
+
+<div class="news">
+
+<img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80">
+
+<div class="text">
+
+<h2>India Defeated England in First ODI</h2>
+
+<p>
+
+India started the ODI series against England with a strong six-wicket victory.
+Captain Shubman Gill led from the front with a brilliant knock while Axar Patel and Washington Sundar finished the chase.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="news">
+
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80">
+
+<div class="text">
+
+<h2>Historic Win for India Women</h2>
+
+<p>
+
+India Women scripted history with a remarkable victory over England Women at Lord's.
+A superb batting performance followed by disciplined bowling secured the memorable win.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="news">
+
+<img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80">
+
+<div class="text">
+
+<h2>ICC Announces New ODI World Cup Format</h2>
+
+<p>
+
+The ICC introduced a new structure for the 2027 ODI World Cup featuring exciting new stages,
+making the tournament more competitive than ever.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Quiz Starts -->
+
+<div class="quiz">
+
+<h2>🏆 Cricket Quiz</h2>
+
+<progress id="bar" value="0" max="3"></progress>
+
+<div class="question">
+
+<b>1. Who won the 2023 ODI World Cup?</b>
+
+<label><input type="radio" name="q1"> Australia</label>
+
+<label><input type="radio" name="q1"> India</label>
+
+<label><input type="radio" name="q1"> England</label>
+
+<label><input type="radio" name="q1"> Pakistan</label>
+
+</div>
+
+<div class="question">
+
+<b>2. Which ground is known as the Home of Cricket?</b>
+
+<label><input type="radio" name="q2"> MCG</label>
+
+<label><input type="radio" name="q2"> Lord's</label>
+
+<label><input type="radio" name="q2"> Eden Gardens</label>
+
+<label><input type="radio" name="q2"> Wankhede</label>
+
+</div>
+
+<div class="question">
+
+<b>3. How many players are there in a cricket team?</b>
+
+<label><input type="radio" name="q3"> 9</label>
+
+<label><input type="radio" name="q3"> 10</label>
+
+<label><input type="radio" name="q3"> 11</label>
+
+<label><input type="radio" name="q3"> 12</label>
+
+</div>
+
+<button class="submit" onclick="checkQuiz()">
+Submit Quiz
+</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Cricket News Hub | Designed with ❤️
+
+</footer>
+
+<!-- PART 2 JavaScript starts here -->
+
+<script>
+<script>
+
+// =========================
+// LOADING SCREEN
+// =========================
+
+window.onload = function () {
+
+    setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+    },1500);
+
+    updateClock();
+    setInterval(updateClock,1000);
+
+};
+
+// =========================
+// LIVE CLOCK
+// =========================
+
+function updateClock(){
+
+    let now=new Date();
+
+    document.getElementById("clock").innerHTML=
+    "🕒 "+now.toLocaleTimeString();
+
+}
+
+// =========================
+// DARK MODE
+// =========================
+
+function darkMode(){
+
+    document.body.classList.toggle("dark");
+
+}
+
+// =========================
+// QUIZ
+// =========================
+
+function checkQuiz(){
+
+    let score=0;
+
+    let q1=document.querySelector('input[name="q1"]:checked');
+    let q2=document.querySelector('input[name="q2"]:checked');
+    let q3=document.querySelector('input[name="q3"]:checked');
+
+    if(q1==null || q2==null || q3==null){
+
+        alert("Please answer every question.");
+
+        return;
+
+    }
+
+    // Correct Answers
+
+    if(q1.nextSibling.textContent.trim()=="Australia")
+        score++;
+
+    if(q2.nextSibling.textContent.trim()=="Lord's")
+        score++;
+
+    if(q3.nextSibling.textContent.trim()=="11")
+        score++;
+
+    // Progress Bar
+
+    document.getElementById("bar").value=score;
+
+    // Result
+
+    let result=document.getElementById("result");
+
+    if(score==3){
+
+        result.innerHTML="🏆 PERFECT SCORE!<br>3 / 3";
+
+        confetti();
+
+    }
+
+    else if(score==2){
+
+        result.innerHTML="⭐ Great Job!<br>2 / 3";
+
+    }
+
+    else if(score==1){
+
+        result.innerHTML="🙂 Good Try!<br>1 / 3";
+
+    }
+
+    else{
+
+        result.innerHTML="😢 Better Luck Next Time!<br>0 / 3";
+
+    }
+
+}
+
+// =========================
+// PLAY AGAIN
+// =========================
+
+function playAgain(){
+
+    location.reload();
+
+}
+
+// =========================
+// SIMPLE CONFETTI
+// =========================
+
+function confetti(){
+
+    for(let i=0;i<120;i++){
+
+        let c=document.createElement("div");
+
+        c.innerHTML="🎉";
+
+        c.style.position="fixed";
+
+        c.style.left=Math.random()*window.innerWidth+"px";
+
+        c.style.top="-20px";
+
+        c.style.fontSize=(15+Math.random()*25)+"px";
+
+        c.style.zIndex="9999";
+
+        document.body.appendChild(c);
+
+        let y=-20;
+
+        let speed=2+Math.random()*5;
+
+        let drift=(Math.random()-0.5)*2;
+
+        let x=parseFloat(c.style.left);
+
+        let timer=setInterval(function(){
+
+            y+=speed;
+            x+=drift;
+
+            c.style.top=y+"px";
+            c.style.left=x+"px";
+
+            if(y>window.innerHeight){
+
+                clearInterval(timer);
+
+                c.remove();
+
+            }
+
+        },20);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

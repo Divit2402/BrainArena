@@ -1,14 +1,76 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>
-Science Quiz
-</title>
+<title>Class 8 Science Quiz</title>
+
+<script>
+function checkAnswers()
+{
+    let score = 0;
+
+    // Question 1
+    if(document.querySelector('input[name="q1"]:checked') &&
+       document.querySelector('input[name="q1"]:checked').value=="Photosynthesis")
+    {
+        score++;
+    }
+
+    // Question 2
+    if(document.querySelector('input[name="q2"]:checked') &&
+       document.querySelector('input[name="q2"]:checked').value=="Mercury")
+    {
+        score++;
+    }
+
+    // Question 3
+    if(document.querySelector('input[name="q3"]:checked') &&
+       document.querySelector('input[name="q3"]:checked').value=="Newton")
+    {
+        score++;
+    }
+
+    alert("Your Score is " + score + " out of 3");
+}
+</script>
+
 </head>
-<body bgcolor="black" text="white">
-<h2 align="center">Science Quiz </h2>
-  <form> 
-    <b>1) Which </b>
-  </form>
+
+<body bgcolor="yellow" text="red">
+
+<h2 align="center">Class 8 Science Quiz</h2>
+
+<form>
+
+<b>1) Plants prepare their food by the process of:</b><br><br>
+
+<input type="radio" name="q1" value="Respiration"> Respiration<br>
+<input type="radio" name="q1" value="Photosynthesis"> Photosynthesis<br>
+<input type="radio" name="q1" value="Digestion"> Digestion<br>
+<input type="radio" name="q1" value="Transpiration"> Transpiration<br><br>
+
+<hr>
+
+<b>2) Which metal is liquid at room temperature?</b><br><br>
+
+<input type="radio" name="q2" value="Iron"> Iron<br>
+<input type="radio" name="q2" value="Copper"> Copper<br>
+<input type="radio" name="q2" value="Mercury"> Mercury<br>
+<input type="radio" name="q2" value="Aluminium"> Aluminium<br><br>
+
+<hr>
+
+<b>3) What is the SI unit of force?</b><br><br>
+
+<input type="radio" name="q3" value="Joule"> Joule<br>
+<input type="radio" name="q3" value="Newton"> Newton<br>
+<input type="radio" name="q3" value="Watt"> Watt<br>
+<input type="radio" name="q3" value="Pascal"> Pascal<br><br>
+
+<input type="button" value="Submit Quiz" onclick="checkAnswers()">
+
+</form>
 
 </body>
+
 </html>

@@ -9,10 +9,40 @@
           color: red;
         }
             </style>
-            
+        
+
+
+<p>1. What gas do plants take in from the air?</p>
+<input type="text" id="q1">
+
+<p>2. What is the boiling point of water in degrees Celsius?</p>
+<input type="text" id="q2">
+
+<br><br>
+<button onclick="checkQuiz()">Submit</button>
+
 <script>
-    let a = "Good job!, You are a science expert"
+function checkQuiz() {
+  let score = 0;
+
+  let answer1 = document.getElementById("q1").value;
+  let answer2 = document.getElementById("q2").value;
+
+  if (answer1 == "CARBON DIOXIDE") {
+    score++;
+  }
+
+  if (answer2 == "100") {
+    score++;
+  }
+
+  alert("Your score is " + score + "/2");
+}
+
+
+let a = "Good job!, You are a science expert"
     alert(a)
+    
 </script>
         </body>
 </HTML>

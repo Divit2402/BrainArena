@@ -1,1 +1,41 @@
+<HTML>
+    <HEAD>
+        <TITLE> Science Quiz</TITLE>
+        <link rel="stylesheet" href="Science_Quiz.css">
+    </HEAD>
+    <body background="ChatGPT Image Jul 29, 2026, 07_57_29 PM.png " text="white" font="Arials" TOPMARGIN="50" LEFTMARGIN="50">
+        <h1>   Science quiz</h1>
+
+<p>1. Mars has two moons.Name the one starting with the letter P<br> Answer in Capital letters </p>
+<input type="text" id="q1">
+
+<p>2. Who was the first woman in space?<br>Answer in Capital letters</p>
+<input type="text" id="q2">
+
+<br><br>
+<button onclick="checkQuiz()">Submit</button>
+
+<script>
+function checkQuiz() {
+  let score = 0;
+
+  let answer1 = document.getElementById("q1").value;
+  let answer2 = document.getElementById("q2").value;
+
+  if (answer1 == "PHOBOS") {
+    score++;
+  }
+  if (answer2 == "VALENTINA TERESHKOVA") {
+    score++;
+  }
+  alert("Your score is " + score + "/2");
+}
+
+
+let a = "Good job!, You are a science expert"
+    alert(a)
+    
+</script>
+        </body>
+</HTML>
 

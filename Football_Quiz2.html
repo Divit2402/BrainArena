@@ -5,6 +5,8 @@
 </HEAD>
   <BODY>
 <p> Which is the very first European Club?<br>A-Sheffield FC <br>B.Barcelona<br>C.Real Madrid</p>
+  <input type="text" id="q1">
+    <p> Which country won the 1994 FIFA World Cup?<br>A.Argentina<br>B.Uruguay<br>C.Brazil<br>D.Netherlands<br></p>
 <br>
 <button onclick="checkQuiz()">Submit</button>
 
@@ -17,10 +19,10 @@ function checkQuiz() {
 let answer3 = document.getElementById("q3").value;
     let a = "Good job!, You are a science expert"
 
-  if (answer1 == "PHOBOS") {
+  if (answer1 == "A") {
     score++;
   }
-  if (answer2 == "VALENTINA TERESHKOVA") {
+  if (answer2 == "C") {
     score++;
   }
     if (answer3 =="A"){

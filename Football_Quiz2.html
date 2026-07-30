@@ -5,7 +5,30 @@
 </HEAD>
   <BODY>
 <p> Which is the very first European Club?<br>A-Sheffield FC <br>B.Barcelona<br>C.Real Madrid</p>
+<br>
+<button onclick="checkQuiz()">Submit</button>
 
+<script>
+function checkQuiz() {
+  let score = 0;
+
+  let answer1 = document.getElementById("q1").value;
+  let answer2 = document.getElementById("q2").value;
+let answer3 = document.getElementById("q3").value;
+    let a = "Good job!, You are a science expert"
+
+  if (answer1 == "PHOBOS") {
+    score++;
+  }
+  if (answer2 == "VALENTINA TERESHKOVA") {
+    score++;
+  }
+    if (answer3 =="A"){
+        score++;
+    }
+  alert("Your score is " + score + "/3");
+ alert(a)
+    
 
     
   </BODY>

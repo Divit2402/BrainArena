@@ -11,8 +11,10 @@
 
 <p>2. Who was the first woman in space?<br>Answer in Capital letters</p>
 <input type="text" id="q2">
+        <p>Substances whose pH is above 7 are<br> A Basic<br> B Acidic <br> C Neutral<br>Type the option letter in capital<br></p>
+        <input type="text" id="q3">
 
-<br><br>
+<br>
 <button onclick="checkQuiz()">Submit</button>
 
 <script>
@@ -21,6 +23,8 @@ function checkQuiz() {
 
   let answer1 = document.getElementById("q1").value;
   let answer2 = document.getElementById("q2").value;
+let answer3 = document.getElementById("q3").value;
+    let a = "Good job!, You are a science expert"
 
   if (answer1 == "PHOBOS") {
     score++;
@@ -28,12 +32,11 @@ function checkQuiz() {
   if (answer2 == "VALENTINA TERESHKOVA") {
     score++;
   }
-  alert("Your score is " + score + "/2");
-}
-
-
-let a = "Good job!, You are a science expert"
-    alert(a)
+    if (answer3 =="A"){
+        score++;
+    }
+  alert("Your score is " + score + "/3");
+ alert(a)
     
 </script>
         </body>

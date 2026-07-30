@@ -1,8 +1,43 @@
-<!Doctype Html>
-<html>
-  <head>
-    <title> Cricket Quiz </title>
-    <link rel="stylesheet" href=".css">
-  </head>
-  <body></body>
-</html>
+<HTML>
+    <HEAD>
+        <TITLE> Science Quiz</TITLE>
+        <link rel="stylesheet" href="">
+    </HEAD>
+    <body text="white" font="Arials" TOPMARGIN="50" LEFTMARGIN="50">
+        <h1>  Cricket Quiz</h1>
+
+<p>1. Which batsman has scored the most runs in ICC Men's T20 World Cups? P<br> Answer in Capital letters </p>
+<input type="text" id="q1">
+
+<p>2. Which Indian bowler took the first-ever ODI hat-trick for India?<br>Answer in Capital letters</p>
+<input type="text" id="q2">
+        <p>Which bowler has the best bowling figures in a Test innings?(only the name of the bowler)<br> <br>  <br> C <br>Type the answers in capital letters<br></p>
+        <input type="text" id="q3">
+
+<br>
+<button onclick="checkQuiz()">Submit</button>
+
+<script>
+function checkQuiz() {
+  let score = 0;
+
+  let answer1 = document.getElementById("q1").value;
+  let answer2 = document.getElementById("q2").value;
+let answer3 = document.getElementById("q3").value;
+    let a = "Good job!, You are a science expert"
+
+  if (answer1 == "VIRAT KOHLI") {
+    score++;
+  }
+  if (answer2 == "CHETAN SHARMA") {
+    score++;
+  }
+    if (answer3 =="JIM LAKER"){
+        score++;
+    }
+  alert("Your score is " + score + "/3");
+ alert(a)
+    
+</script>
+        </body>
+</HTML>

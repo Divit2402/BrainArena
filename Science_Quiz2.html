@@ -11,9 +11,10 @@
 
 <p>2. Who was the first woman in space?<br>Answer in Capital letters</p>
 <input type="text" id="q2">
-        <p>Substances whose pH is above 7 are<br> A Basic<br> B Acidic <br> C Neutral<br>Type the option letter in capital<br></p>
+        <p>3.Substances whose pH is above 7 are<br> A Basic<br> B Acidic <br> C Neutral<br>Type the option letter in capital<br></p>
         <input type="text" id="q3">
-
+<p>4. Metal oxides are basic in natire. Write T for True and F for False</p>
+<input type="text" id="q4">
 <br>
 <button onclick="checkQuiz()">Submit</button>
 
@@ -24,6 +25,7 @@ function checkQuiz() {
   let answer1 = document.getElementById("q1").value;
   let answer2 = document.getElementById("q2").value;
 let answer3 = document.getElementById("q3").value;
+let answer4= document.getElementById("q4").value;
     let a = "Good job!, You are a science expert"
 
   if (answer1 == "PHOBOS") {
@@ -33,6 +35,9 @@ let answer3 = document.getElementById("q3").value;
     score++;
   }
     if (answer3 =="A"){
+        score++;
+    }
+    if (answer4=="T"){
         score++;
     }
   alert("Your score is " + score + "/3");

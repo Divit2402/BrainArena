@@ -11,7 +11,8 @@
 
 <p>2. What is the boiling point of water in degrees Celsius? Write number only</p>
 <input type="text" id="q2">
-
+        <p>Which type of mirror is used in side mirrors of cars?<br><br>A-Concave Mirror<br>B-Convex mirror<br>C-Plane Mirror<br>Write the option letter. If my anser is A i will write A</p>
+<input type="text" id="q3">
 <br><br>
 <button onclick="checkQuiz()">Submit</button>
 
@@ -21,20 +22,19 @@ function checkQuiz() {
 
   let answer1 = document.getElementById("q1").value;
   let answer2 = document.getElementById("q2").value;
-
+let answer3= document.getElementById("q3").value;
   if (answer1 == "CARBON DIOXIDE") {
     score++;
   }
   if (answer2 == "100") {
     score++;
   }
-  alert("Your score is " + score + "/2");
+    if(answer3 =="B"){
+        score++;
+    }
+  alert("Your score is " + score + "/3");
 }
 
-
-let a = "Good job!, You are a science expert"
-    alert(a)
-    
 </script>
     <a href= "https://divit2402.github.io/BrainArena/Science_Quiz2.html"> Attempt our next quiz </a>
         </body>

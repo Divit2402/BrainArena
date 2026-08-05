@@ -14,7 +14,11 @@
         <p>Which bowler has the best bowling figures in a Test innings?(only the name of the bowler)<br> <br>  <br> C <br>Type the answers in capital letters<br></p>
         <input type="text" id="q3">
         <p>What is Sir Donald Bradman's avergae  score in test(write number up to 2 decimal places)<br>Write in capital letters</p>
-          <input type="text" id="q4"
+          <input type="text" id="q4">
+    <p>Which country won the inaugral edition of Champions Trophy in 1998? <br><br>Please Write the answer in all capital letters-just the country name</p>          
+<input type="text" id="q5">
+        <p>Which country won the 2024 T20 WORLD CUP2010</p>
+        <input type="text" id="q6">
 <br>
 <button onclick="checkQuiz()">Submit</button>
 
@@ -26,7 +30,8 @@ function checkQuiz() {
   let answer2 = document.getElementById("q2").value;
 let answer3 = document.getElementById("q3").value;
     let answer4 = document.getElementById("q4").value;
-    let a = "Good job!, You are a science expert"
+    let answer5 = document.getElementById("q5").value;
+let answer6=document.getElementById("q5").value;
 
   if (answer1 == "VIRAT KOHLI") {
     score++;
@@ -40,8 +45,14 @@ let answer3 = document.getElementById("q3").value;
     if (answer4 =="99.96"){
         score++;
     }
-  alert("Your score is " + score + "/4");
- alert(a)
+    if (answer5 =="SOUTH AFRICA"){
+        score++;
+    }
+    if (answer6 =="ENGLAND"){
+        score++;
+    }
+  alert("Your score is " + score + "/6");
+
     
 </script>
         </body>

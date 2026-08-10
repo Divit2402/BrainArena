@@ -13,7 +13,13 @@
 <input type="text" id="q2">
         <p>Which type of mirror is used in side mirrors of cars?<br><br>A-Concave Mirror<br>B-Convex mirror<br>C-Plane Mirror<br>Write the option letter. If my anser is A i will write A</p>
 <input type="text" id="q3">
-        <p></p>
+        <p>What is the SI unit of electrical current?<br>Answer in all capital</p>
+        <input type="text" id="q4">
+        <p>Which phenomenon explains why the sky is blue in colour?<br> Which option is correct. Type the option in capital letters-Aor B or........<br>Your options are<br>A) Reflection<br>
+B) Refraction<br>
+C) Scattering<br>
+D) Dispersion</p>
+        <input type="text" id="q5">
 <br><br>
 <button onclick="checkQuiz()">Submit</button>
 
@@ -24,6 +30,8 @@ function checkQuiz() {
   let answer1 = document.getElementById("q1").value;
   let answer2 = document.getElementById("q2").value;
 let answer3= document.getElementById("q3").value;
+    let answer4= document.getElementById("q4").value;
+       let answer5= document.getElementById("q5").value;
   if (answer1 == "CARBON DIOXIDE") {
     score++;
   }
@@ -33,7 +41,13 @@ let answer3= document.getElementById("q3").value;
     if(answer3 =="B"){
         score++;
     }
-  alert("Your score is " + score + "/3");
+    if (answer4 =="AMPERE"){
+score++;
+    }
+    if(answer5=="C"){
+score++;
+    }
+  alert("Your score is " + score + "/5");
 }
 
 </script>

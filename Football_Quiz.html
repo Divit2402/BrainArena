@@ -11,140 +11,57 @@ body{
     padding:30px;
 }
 
-.container{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-
 h1{;
     color:#006400;
 }
 
-.question{
-    margin-top:25px;
-    padding:15px;
-    background:#f2fff2;
-    border-left:6px solid green;
-    border-radius:8px;
-}
-
-label{
-    display:block;
-    margin:8px 0;
-    cursor:pointer;
-    font-size:18px;
-}
-
-button{
-    display:block;
-    width:100%;
-    margin-top:30px;
-    padding:15px;
-    font-size:20px;
-    background:#28a745;
-    color:white;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#1e7e34;
-    transform:scale(1.03);
-}
-
-#result{
-    margin-top:25px;
-    text-align:center;
-    font-size:26px;
-    font-weight:bold;
-    color:#006400;
-}
 </style>
 
 </head>
 
 <body>
-
-<div class="container">
-
 <h1>⚽ Football Quiz ⚽</h1>
+    <p>Who is known as the king of the football?<br>Please answer in capital letters-Your options are PELE, RONALDO, MESSI</p>
+<input type="text" id="q1">
+    <p>Who is known as the "Egyptian King" in football?<br>Please answer in capital letters</p>
+<input type="text" id="q2">
 
-<form id="quiz">
+<p>Which club has won the UEFA Champions League the most times?<br>Please answer in capital letters</p>
+<input type="text" id="q3">
 
-<div class="question">
-<h3>1. How many players are there in a football team on the field?</h3>
+<p>Who scored the famous "Hand of God" goal in the 1986 FIFA World Cup?<br>Please answer in capital letters</p>
+<input type="text" id="q4">
 
-<label><input type="radio" name="q1" value="9"> 9</label>
-<label><input type="radio" name="q1" value="10"> 10</label>
-<label><input type="radio" name="q1" value="11"> 11</label>
-<label><input type="radio" name="q1" value="12"> 12</label>
-</div>
-
-<div class="question">
-<h3>2. Which country won the FIFA World Cup in 2022?</h3>
-
-<label><input type="radio" name="q2" value="Brazil"> Brazil</label>
-<label><input type="radio" name="q2" value="Argentina"> Argentina</label>
-<label><input type="radio" name="q2" value="France"> France</label>
-<label><input type="radio" name="q2" value="Germany"> Germany</label>
-</div>
-
-<div class="question">
-<h3>3. Who is known as "The King of Football"?</h3>
-
-<label><input type="radio" name="q3" value="Pele"> Pelé</label>
-<label><input type="radio" name="q3" value="Messi"> Lionel Messi</label>
-<label><input type="radio" name="q3" value="Ronaldo"> Cristiano Ronaldo</label>
-<label><input type="radio" name="q3" value="Neymar"> Neymar</label>
-</div>
-
-<button type="button" onclick="checkQuiz()">Submit Quiz</button>
-
-</form>
-
-<div id="result"></div>
-
-</div>
-
+<p>Which player has won the most Ballon d'Or awards?<br>Write full name and please answer in capital letters</p>
+<input type="text" id="q5">
+<br>
+<button onclick="checkQuiz()">Submit</button>
 <script>
-function checkQuiz(){
-
-let score=0;
-
-let q1=document.querySelector('input[name="q1"]:checked');
-let q2=document.querySelector('input[name="q2"]:checked');
-let q3=document.querySelector('input[name="q3"]:checked');
-
-if(!q1 || !q2 || !q3){
-document.getElementById("result").innerHTML="❗Please answer every question.";
-return;
+function checkQuiz() {
+  let score = 0;
+      let answer1 = document.getElementById("q1").value;
+  let answer2 = document.getElementById("q2").value;
+let answer3 = document.getElementById("q3").value;
+    let answer4 = document.getElementById("q4").value;
+    let answer5= document.getElementById("q5").value;
+    if (answer1=="PELE"){
+        score++;
+    }
+    if (answer2=="MOHAMED SALH"){
+        score++
+    }
+    if(answer3=="REAL MADRID"){
+            score++;
+    }
+    if(answer4=="DIEGO MARADONA"){
+       score++;
+    }
+    if(answer5=="LIONEL MESSI"){
+        score++
+    }
 }
-
-if(q1.value=="11") score++;
-if(q2.value=="Argentina") score++;
-if(q3.value=="Pele") score++;
-
-let message="";
-
-if(score==3)
-message="🏆 Perfect! 3/3";
-else if(score==2)
-message="⭐ Great! 2/3";
-else if(score==1)
-message="🙂 You scored 1/3";
-else
-message="😢 You scored 0/3";
-
-document.getElementById("result").innerHTML=message;
-
-}
+    alert("Your score is " + score + "/4");
 </script>
-
 </body>
+
 </html>

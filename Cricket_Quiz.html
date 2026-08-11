@@ -15,7 +15,9 @@
         <input type="text" id="q3">
         <p>4. Who was the player of tournament in 2015 ODI world cup<br>Write in capital letters</p>
           <input type="text" id="q4">
-<br>
+        <p>5. Which IPL team has the record for getting all out on the lowest score. <BR>Your options are-(A)MI <br>(B)RCB<br> (C)DC<br> (D)LSG<br> Write option letter in capital</p>
+<input type="text" id="q5">
+        <br>
 <button onclick="checkQuiz()">Submit</button>
 
 <script>
@@ -26,6 +28,7 @@ function checkQuiz() {
   let answer2 = document.getElementById("q2").value;
 let answer3 = document.getElementById("q3").value;
     let answer4 = document.getElementById("q4").value;
+       let answer5 = document.getElementById("q5").value;
     let a = "Good job!, You are a cricket expert"
 
   if (answer1 == "VIRAT KOHLI") {
@@ -40,7 +43,10 @@ let answer3 = document.getElementById("q3").value;
     if (answer4 =="MITCHELL STARC"){
         score++;
     }
-  alert("Your score is " + score + "/4");
+    if (answer5=="B"){
+        score++;
+    }
+  alert("Your score is " + score + "/5");
  alert(a)
 }
 </script>

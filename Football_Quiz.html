@@ -31,9 +31,6 @@ h1{
 <input type="text" id="q5">
     <input id="playerName" placeholder="Enter your name">
 <button onclick="saveScore()">Save Score</button>
-
-<h2>🏆 Leaderboard</h2>
-<ol id="leaderboard"></ol>
 <br>
 <button onclick="checkQuiz()">Submit</button>
 <script>
@@ -62,41 +59,7 @@ let answer3 = document.getElementById("q3").value;
 
     alert("Your score is " + score + "/5" +"You did well!!");
 }
-    <script>
-function saveScore() {
-    let name = document.getElementById("playerName").value;
-    let score = 8; // replace with your actual quiz score
-
-    let scores = JSON.parse(localStorage.getItem("scores")) || [];
-
-    scores.push({
-        name: name,
-        score: score
-    });
-
-    scores.sort((a, b) => b.score - a.score);
-    scores = scores.slice(0, 10);
-
-    localStorage.setItem("scores", JSON.stringify(scores));
-
-    showLeaderboard();
-}
-
-function showLeaderboard() {
-    let scores = JSON.parse(localStorage.getItem("scores")) || [];
-    let list = document.getElementById("leaderboard");
-
-    list.innerHTML = "";
-
-    scores.forEach(player => {
-        let li = document.createElement("li");
-        li.textContent = player.name + " — " + player.score;
-        list.appendChild(li);
-    });
-}
-
-showLeaderboard();
-</script>
+    
 </script>
 </body>
 

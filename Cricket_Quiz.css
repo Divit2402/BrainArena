@@ -13,3 +13,9 @@ button {
     color:#36125e;
     background-color:#e1fbf2;
 }
+.quizpic {
+    position: absolute;
+    right: 50px;
+    top: 150px;
+    width: 500px;
+}

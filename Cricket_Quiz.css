@@ -9,3 +9,7 @@ p{
    color:rgb(86, 46, 130);
   font-family: 'Poppins', sans-serif;
 }
+button {
+    color:#36125e;
+    background-color:#e1fbf2;
+}

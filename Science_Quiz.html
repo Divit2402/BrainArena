@@ -20,6 +20,10 @@ B) Refraction<br>
 C) Scattering<br>
 D) Dispersion</p>
         <input type="text" id="q5">
+        <p> Statement 1:Methyl Orange and Phenolphthalein are synthetic indicators<br>Statement2: Concave lens is a converging mirror
+        <br>A Both are false<br> B. Both are True<br> C.Statement 1 is correct and Statement2 is false<br> D.Statement 2 is correct and Statement 1 is false<br> Type option letter in 
+        in capital for exammple-A,B,C,D</p>
+        <input type="text" id="q6">
 <br><br>
 <button onclick="checkQuiz()">Submit</button>
 
@@ -32,6 +36,7 @@ function checkQuiz() {
 let answer3= document.getElementById("q3").value;
     let answer4= document.getElementById("q4").value;
        let answer5= document.getElementById("q5").value;
+       let answer6= document.getElementById("q6").value;
   if (answer1 == "CARBON DIOXIDE") {
     score++;
   }
@@ -47,7 +52,10 @@ score++;
     if(answer5=="C"){
 score++;
     }
-  alert("Your score is " + score + "/5");
+    if(answer6=="C"){
+        score++;
+    }
+  alert("Your score is " + score + "/6");
 }
 
 </script>

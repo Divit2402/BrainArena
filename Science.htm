@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind-Blowing Science Facts</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --accent-color: #38bdf8;
+      --cosmic-latte: #FFF8E7;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      transition: background-color 0.5s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      background: linear-gradient(45deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .fact-card {
+      background-color: var(--card-bg);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .fact-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-color);
+    }
+
+    .fact-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .fact-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .interactive-zone {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #334155;
+    }
+
+    button {
+      background-color: var(--accent-color);
+      color: #0f172a;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+      background-color: #7dd3fc;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    /* Fact Specific Styles */
+    .color-preview {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .color-box {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #FFF8E7;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 10px rgba(255, 248, 231, 0.3);
+    }
+
+    .shuffle-result {
+      font-family: monospace;
+      font-size: 1rem;
+      color: #34d399;
+      word-break: break-all;
+      margin-top: 0.5rem;
+    }
+
+    .uranium-sim {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ball {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #a3e635, #3f6212);
+      display: inline-block;
+      cursor: grab;
+      transition: transform 0.1s ease;
+    }
+
+    .spin {
+      animation: spin 0.3s infinite linear;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .dna-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .dna-display {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f43f5e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>5 Mind-Blowing Science Facts</h1>
+  <p class="subtitle">Interactive truths about our universe</p>
+
+  <div class="container">
+
+    <!-- Fact 1: Cosmic Latte -->
+    <div class="fact-card">
+      <div class="fact-number">Fact #1 • Astronomy</div>
+      <div class="fact-text">
+        The universe is <strong>beige</strong> on average. Scientists averaged all the light emitted by galaxies and discovered the official color of the cosmos: <code>#FFF8E7</code> (Cosmic Latte).
+      </div>
+      <div class="interactive-zone color-preview">
+        <div class="color-box"></div>
+        <button onclick="toggleCosmicBackground()">Apply to Page Background</button>
+      </div>
+    </div>
+
+    <!-- Fact 2: Card Shuffling -->
+    <div class="fact-card">
+      <div class="fact-number">Fact #2 • Mathematics</div>
+      <div class="fact-text">
+        There are more ways to shuffle a standard 52-card deck ($52!$) than there are <strong>atoms on Earth</strong>. Every time you shuffle thoroughly, that exact sequence has likely never existed before.
+      </div>
+      <div class="interactive-zone">
+        <button onclick="generateShuffle()">Shuffle a Unique Deck</button>
+        <div class="shuffle-result" id="shuffleResult">Click to generate 1 of 8×10⁶⁷ combinations</div>
+      </div>
+    </div>
+
+    <!-- Fact 3: Uranium 235 -->
+    <div class="fact-card">
+      <div class="fact-number">Fact #3 • Physics</div>
+      <div class="fact-text">
+        If you spin a subcritical sphere of <strong>uranium-235</strong> fast enough in your hand, nothing happens. But if you bring two subcritical spheres together—reaching critical mass—city gone.
+      </div>
+      <div class="interactive-zone uranium-sim">
+        <div class="ball" id="uraniumBall" onclick="spinBall()"></div>
+        <button onclick="spinBall()">Spin Single Sphere</button>
+        <button onclick="combineBalls()" style="background-color: #ef4444; color: white;">Bring 2 Spheres Together</button>
+      </div>
+    </div>
+
+    <!-- Fact 4: Supercooled Water -->
+    <div class="fact-card">
+      <div class="fact-number">Fact #4 • Chemistry</div>
+      <div class="fact-text">
+        Water can be <strong>two distinct liquids at once</strong>. When supercooled below -68°C at high pressure, it separates into two liquid phases: high-density and low-density liquid.
+      </div>
+      <div class="interactive-zone">
+        <button onclick="togglePhase(this)">Toggle Water State (-68°C)</button>
+        <div id="waterStatus" style="margin-top: 0.5rem; color: #38bdf8;">Current State: Single Liquid</div>
+      </div>
+    </div>
+
+    <!-- Fact 5: DNA -->
+    <div class="fact-card">
+      <div class="fact-number">Fact #5 • Genetics</div>
+      <div class="fact-text">
+        Genetically speaking, humans share roughly <strong>60% of our DNA with bananas</strong> and about <strong>90% with domestic cats</strong> due to shared cellular building blocks.
+      </div>
+      <div class="interactive-zone">
+        <div class="dna-toggle">
+          <button onclick="showDNA('banana')">🍌 Compare to Banana</button>
+          <button onclick="showDNA('cat')">🐱 Compare to Cat</button>
+        </div>
+        <div class="dna-display" id="dnaDisplay">Select an organism</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fact 1: Toggle background color
+    let isCosmic = false;
+    function toggleCosmicBackground() {
+      if (!isCosmic) {
+        document.body.style.backgroundColor = '#FFF8E7';
+        document.body.style.color = '#0f172a';
+        isCosmic = true;
+      } else {
+        document.body.style.backgroundColor = '#0f172a';
+        document.body.style.color = '#f8fafc';
+        isCosmic = false;
+      }
+    }
+
+    // Fact 2: Generate random card sequence preview
+    function generateShuffle() {
+      const suits = ['♠', '♥', '♦', '♣'];
+      const values = ['A', '2', '5', '9', 'J', 'Q', 'K'];
+      let sample = [];
+      for(let i = 0; i < 4; i++) {
+        let v = values[Math.floor(Math.random() * values.length)];
+        let s = suits[Math.floor(Math.random() * suits.length)];
+        sample.push(v + s);
+      }
+      document.getElementById('shuffleResult').innerText = `Order: ${sample.join(' ')} ... [52! permutations]`;
+    }
+
+    // Fact 3: Uranium interaction
+    let isSpinning = false;
+    function spinBall() {
+      const ball = document.getElementById('uraniumBall');
+      isSpinning = !isSpinning;
+      if (isSpinning) {
+        ball.classList.add('spin');
+      } else {
+        ball.classList.remove('spin');
+      }
+    }
+
+    function combineBalls() {
+      alert("💥 CRITICAL MASS REACHED! Boom. City gone.");
+    }
+
+    // Fact 4: Liquid phase toggle
+    let isTwoLiquids = false;
+    function togglePhase(btn) {
+      const status = document.getElementById('waterStatus');
+      if (!isTwoLiquids) {
+        status.innerText = "Current State: 2 Distinct Liquids (Low-Density & High-Density)";
+        status.style.color = "#a7f3d0";
+        isTwoLiquids = true;
+      } else {
+        status.innerText = "Current State: Single Liquid";
+        status.style.color = "#38bdf8";
+        isTwoLiquids = false;
+      }
+    }
+
+    // Fact 5: DNA percentage
+    function showDNA(type) {
+      const display = document.getElementById('dnaDisplay');
+      if (type === 'banana') {
+        display.innerText = "60% Shared DNA 🍌";
+      } else if (type === 'cat') {
+        display.innerText = "90% Shared DNA 🐱";
+      }
+    }
+  </script>
+</body>
+</html>
